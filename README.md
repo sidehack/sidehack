@@ -1,0 +1,2 @@
+# sidehack
+Enterprise innovation intelligence
