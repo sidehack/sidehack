@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="sidehack",
-    version="0.1.5",
+    version="0.0.1",
     author="Manas Hardas",
     author_email="manas@manashardas.com",
     description="Enterprise innovation intelligence",
@@ -15,11 +15,7 @@ setup(
         ],
     install_requires=[
         "pyramda",
-        "numpy",
-        "pandas",
-        "flask",
-        "MYSQL-python",
-        "sqlalchemy"
+        "django"
     ],
     package_data={},
     tests_require=["nose"],
