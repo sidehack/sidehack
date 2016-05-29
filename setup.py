@@ -15,7 +15,8 @@ setup(
         ],
     install_requires=[
         "pyramda",
-        "django"
+        "django",
+        "psycopg2"
     ],
     package_data={},
     tests_require=["nose"],
