@@ -9,7 +9,7 @@ setup(
     description="Enterprise innovation intelligence",
     license="Proprietary",
     url="https://github.com/sidehack/sidehack.git",
-    scripts = [],
+    scripts=[],
     packages=[
         "sidehack",
         ],
