@@ -1,0 +1,9 @@
+{% if hacker_list %}
+    <ul>
+    {% for hacker in hacker_list %}
+        <li><a href="/hacks/{{ hacker.id }}/">{{ hacker.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hackers signed up.</p>
+{% endif %}
