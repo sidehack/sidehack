@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
-from .orgs.models import Organization
+from orgs.models import Organization
 
 
 @python_2_unicode_compatible  # only if you need to support Python 2
