@@ -4,12 +4,8 @@ from django.template import loader
 
 
 def index(request):
-    return HttpResponse("This is where hackers hang out")
-
-
-# Create your views here.
-def login(request):
-    return HttpResponse("Login page")
+    return HttpResponse("This is the hackers profile page. All the hacks and \
+                        social connections are shown")
 
 
 def hackers(request):

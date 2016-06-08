@@ -3,4 +3,5 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("This is where Orgs will be shown")
+    return HttpResponse("This is the org profile page. All the hacks of an Org \
+                        are shown here")
