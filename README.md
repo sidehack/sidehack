@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/sidehack/sidehack.png?label=ready&title=Ready)](https://waffle.io/sidehack/sidehack)
 # sidehack
 Enterprise innovation intelligence
 
