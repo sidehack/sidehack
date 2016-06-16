@@ -5,12 +5,21 @@ from orgs.views import index as orgs_mainpage
 
 
 def index(request):
-    return HttpResponse("This is the front page")
+    context = {}
+    return render(request, 'sidehack/index.html', context)
 
 
 # Create your views here.
 def login(request):
-    return HttpResponse("Login page")
+    if request.method == "get":
+        template = loader.get_template('sidehack/login.html')
+        context = {}
+        return HttpResponse(context, request)
+    elif request.method == "post":
+        if authenticated:
+            return route_request(request, entity_name)
+        else:
+            return HttpResponse()
 
 
 def route_request(request, entity_name):

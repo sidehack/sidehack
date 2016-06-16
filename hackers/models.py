@@ -10,4 +10,4 @@ class Hacker(models.Model):     # sidehack creator, same as repo creator
     org = models.ForeignKey(Organization, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.id
+        return self.login

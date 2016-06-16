@@ -1,18 +1,19 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.template import loader
+from hacks.models import Hack
+from hackers.models import Hacker
 
 
 def index(request):
-    return HttpResponse("This is the hackers profile page. All the hacks and \
-                        social connections are shown")
+    context = {
+        'hacks': Hack.objects.all()
+    }
+    return render(request, 'hackers/index.html', context)
 
 
 def hackers(request):
-    hacker_list = Hacker.objects.order_by(id)
-    template = loader.get_template('hacker/index.html')
     context = {
-        'hacker_list': hacker_list
+        'hackers_list': Hacker.objects.order_by(id)
     }
 
-    return HttpResponse(template.render(context, request))
+    return render(request, 'hackers/hackers_list.html', context)

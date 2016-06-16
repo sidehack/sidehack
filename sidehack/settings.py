@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'sidehack.apps.SidehackConfig',
     'hackers.apps.HackersConfig',
     'hacks.apps.HacksConfig',
     'orgs.apps.OrgsConfig',

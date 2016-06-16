@@ -1,0 +1,11 @@
+user foo's hacks and friends<br><br>
+
+{% if hacks %}
+    <ul>
+    {% for hack in hacks %}
+          {{ hack.title }} - {{ hack.description }}<br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hacks are available.</p>
+{% endif %}
