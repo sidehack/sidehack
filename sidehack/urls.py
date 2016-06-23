@@ -19,8 +19,16 @@ import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='index'),
     url(r'^login/', views.login, name='login'),
-    url(r'^(?P<entity_name>[a-zA-Z0-9]+)/$', views.route_request,
-        name='route_request'),
+    url(r'^hacker/(?P<hacker_name>[a-zA-Z0-9]+)/$',
+        views.get_hacker,
+        name='get_hacker'
+        ),
+    url(r'^org/(?P<org_name>[a-zA-Z0-9]+)/$',
+        views.get_org,
+        name='get_org'
+        ),
+    url(r'^$', views.index, name='index'),
+    # url(r'^(?P<entity_name>[a-zA-Z0-9]+)/$', views.route_request,
+    #     name='route_request'),
 ]

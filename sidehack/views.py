@@ -22,9 +22,17 @@ def login(request):
             return HttpResponse()
 
 
-def route_request(request, entity_name):
-    # This function does the routing
-    if entity_name == 'userfoo':
-        return hackers_mainpage(request)
-    elif entity_name == 'orgbar':
-        return orgs_mainpage(request)
+def get_hacker(request, hacker_name):
+    return HttpResponse("content for hacker : " + hacker_name)
+
+
+def get_org(request, org_name):
+    return HttpResponse("content for org : " + org_name)
+
+
+# def route_request(request, entity_name):
+#     # This function does the routing
+#     if entity_name == 'userfoo':
+#         return hackers_mainpage(request)
+#     elif entity_name == 'orgbar':
+#         return orgs_mainpage(request)
