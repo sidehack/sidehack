@@ -4,6 +4,14 @@ from django.utils.encoding import python_2_unicode_compatible
 
 
 @python_2_unicode_compatible
+class Organization(models.Model):
+    org_name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.org_name
+
+
+@python_2_unicode_compatible
 class Hacker(models.Model):     # sidehack creator, same as repo creator
     login = models.CharField(max_length=200)
     org = models.ForeignKey(Organization, on_delete=models.CASCADE)
@@ -33,11 +41,3 @@ class GithubRepository(models.Model):   # github repo connected to the sidehack
 
     def __str__(self):
         return self.repo_name
-
-
-@python_2_unicode_compatible
-class Organization(models.Model):
-    org_name = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.org_name

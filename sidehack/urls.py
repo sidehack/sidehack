@@ -24,11 +24,17 @@ urlpatterns = [
         views.get_hacker,
         name='get_hacker'
         ),
+    url(r'^hacker/(?P<hacker_name>[a-zA-Z0-9]+)/hack/(?P<hack>[a-zA-Z0-9]+)/$',
+        views.get_hacker_hack,
+        name='get_hacker_hack'
+        ),
     url(r'^org/(?P<org_name>[a-zA-Z0-9]+)/$',
         views.get_org,
         name='get_org'
         ),
+    url(r'^org/(?P<org_name>[a-zA-Z0-9]+)/hack/(?P<hack>[a-zA-Z0-9]+)/$',
+        views.get_org_hack,
+        name='get_org_hack'
+        ),
     url(r'^$', views.index, name='index'),
-    # url(r'^(?P<entity_name>[a-zA-Z0-9]+)/$', views.route_request,
-    #     name='route_request'),
 ]

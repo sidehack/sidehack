@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from hackers.views import index as hackers_mainpage
-from orgs.views import index as orgs_mainpage
 
 
 def index(request):
@@ -11,11 +9,10 @@ def index(request):
 
 # Create your views here.
 def login(request):
-    if request.method == "get":
-        template = loader.get_template('sidehack/login.html')
+    if request.method == "GET":
         context = {}
-        return HttpResponse(context, request)
-    elif request.method == "post":
+        return render(request, 'sidehack/login.html', context)
+    elif request.method == "POST":
         if authenticated:
             return route_request(request, entity_name)
         else:
@@ -26,13 +23,13 @@ def get_hacker(request, hacker_name):
     return HttpResponse("content for hacker : " + hacker_name)
 
 
+def get_hacker_hack(request, hacker_name, hack):
+    return HttpResponse(hack + " for hacker " + hacker_name)
+
+
 def get_org(request, org_name):
     return HttpResponse("content for org : " + org_name)
 
 
-# def route_request(request, entity_name):
-#     # This function does the routing
-#     if entity_name == 'userfoo':
-#         return hackers_mainpage(request)
-#     elif entity_name == 'orgbar':
-#         return orgs_mainpage(request)
+def get_org_hack(request, org_name, hack):
+    return HttpResponse(hack + " for org " + org_name)
